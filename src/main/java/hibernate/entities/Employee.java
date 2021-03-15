@@ -9,6 +9,9 @@ import static javax.persistence.GenerationType.IDENTITY;
 public class Employee {
 
     @Id
+    //Для MySQL эта стратегия наиболее распространенная, не стоит полагаться на
+    //AUTO, который в зависимости от версии hibernate либо выбирает IDENTITY либо медленный
+    //TABLE
     @GeneratedValue(strategy = IDENTITY)
     @Column(name = "id")
     private int id;
